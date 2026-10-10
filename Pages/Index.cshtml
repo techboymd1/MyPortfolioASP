@@ -1,0 +1,156 @@
+﻿@page
+@model IndexModel
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Muhammad Ishaq | Web Developer</title>
+
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h2>@Model.Name</h2>
+
+            <button class="menu-button">Menu</button>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="~/Login">Admin Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <p class="small-heading">@Model.Role</p>
+
+                <h1>@Model.Intro</h1>
+
+                <p>
+                    I'm Muhammad Ishaq, a web developer focused on building modern,
+                    practical and functional web experiences.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects">View My Work</a>
+                    <a href="#contact">Let's Work Together</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <p class="section-label">ABOUT ME</p>
+
+            <h2>Turning ideas into useful digital products.</h2>
+
+            <p>
+                I'm Muhammad Ishaq, a web developer focused on building practical
+                digital experiences with clean design and purposeful functionality.
+            </p>
+
+            <p>
+                I enjoy taking ideas from concept to working product, combining
+                frontend development, backend technologies and UI/UX thinking to
+                create solutions that are useful and easy to use.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <p class="section-label">WHAT I WORK WITH</p>
+
+            <h2>Skills & Technologies</h2>
+
+            <div class="skills-list">
+                <div class="skill">
+                    <h3>Frontend</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+
+                <div class="skill">
+                    <h3>Backend</h3>
+                    <p>C#, ASP.NET</p>
+                </div>
+
+                <div class="skill">
+                    <h3>Design</h3>
+                    <p>Figma, UI/UX</p>
+                </div>
+
+                <div class="skill">
+                    <h3>Tools</h3>
+                    <p>Git, GitHub, VS Code</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+
+        <section id="projects" class="projects">
+            <p class="section-label">SELECTED WORK</p>
+
+            <h2>Projects</h2>
+
+            <div class="project-list">
+                @foreach (var project in Model.Projects)
+                {
+                    <article class="project-card">
+                        <p class="project-number">@project.Number</p>
+
+                        <h3>@project.Name</h3>
+
+                        <p>
+                            @project.Description
+                        </p>
+
+                        <p class="project-tech">@project.Technologies</p>
+
+                        @if (!string.IsNullOrEmpty(project.Link))
+                        {
+                            <a href="@project.Link">View Case Study</a>
+                        }
+                        else
+                        {
+                            <span class="project-status">@project.Status</span>
+                        }
+                    </article>
+                }
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <p class="section-label">GET IN TOUCH</p>
+
+            <h2>Have a project in mind?</h2>
+
+            <p>
+                I'm open to working on interesting web projects and helping businesses
+                build useful digital experiences.
+            </p>
+
+            <a href="mailto:techboym.d1@gmail.com">Let's Talk →</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Muhammad Ishaq. All rights reserved.</p>
+    </footer>
+
+<script src="~/js/script.js" asp-append-version="true"></script>
+</body>
+
+</html>
+

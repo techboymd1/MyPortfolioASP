@@ -1,0 +1,91 @@
+@page
+@model MyPortfolioASP.Areas.Admin.Pages.Projects.Edit.IndexModel
+<link rel="stylesheet" href="~/admin.css" asp-append-version="true" />
+
+<div class="admin-dashboard">
+    <aside class="admin-sidebar">
+        <h2>MD Admin</h2>
+        <p class="sidebar-label">WORKSPACE</p>
+
+    <a class="sidebar-link" href="/Admin">Dashboard</a>
+    <a class="sidebar-link active" href="/Admin/Projects">Manage Projects</a>
+    <a class="sidebar-link" href="/Admin/Projects/Create">Add New Project</a>
+
+    <p class="sidebar-label">WEBSITE</p>
+    <a class="sidebar-link" href="/" target="_blank">View Portfolio</a>
+    <a class="sidebar-link" href="/StudentStudyPlanner" target="_blank">View Case Study</a>
+</aside>
+
+<main class="admin-main">
+    <header class="admin-topbar">
+        <div>
+            <p class="admin-eyebrow">CONTENT MANAGEMENT SYSTEM</p>
+            <h1>Edit Project</h1>
+            <p>Update project information and publishing status.</p>
+        </div>
+
+        <a class="form-back-button" href="/Admin/Projects">← Back to Projects</a>
+    </header>
+
+    <section class="project-form-card">
+        <div class="project-form-heading">
+            <div class="form-heading-icon">✎</div>
+            <div>
+                <h2>Project Details</h2>
+                <p>Make your changes below, then save them.</p>
+            </div>
+        </div>
+
+        <form method="post" class="admin-project-form">
+            <input type="hidden" asp-for="Project.Id" />
+
+            <div class="admin-form-grid">
+                <div class="admin-form-field">
+                    <label asp-for="Project.Number">Project Number</label>
+                    <input asp-for="Project.Number" placeholder="e.g. 03" />
+                    <span asp-validation-for="Project.Number"></span>
+                </div>
+
+                <div class="admin-form-field">
+                    <label asp-for="Project.Name">Project Name</label>
+                    <input asp-for="Project.Name" placeholder="Enter project name" />
+                    <span asp-validation-for="Project.Name"></span>
+                </div>
+
+                <div class="admin-form-field admin-form-full">
+                    <label asp-for="Project.Description">Description</label>
+                    <textarea asp-for="Project.Description" rows="5" placeholder="Describe the project and what you built."></textarea>
+                    <span asp-validation-for="Project.Description"></span>
+                </div>
+
+                <div class="admin-form-field admin-form-full">
+                    <label asp-for="Project.Technologies">Technologies</label>
+                    <input asp-for="Project.Technologies" placeholder="e.g. HTML, CSS, JavaScript, C#" />
+                    <span class="admin-field-help">Separate technologies with commas.</span>
+                    <span asp-validation-for="Project.Technologies"></span>
+                </div>
+
+                <div class="admin-form-field admin-form-full">
+                    <label asp-for="Project.Link">Project Link</label>
+                    <input asp-for="Project.Link" placeholder="e.g. /StudentStudyPlanner or https://example.com" />
+                    <span class="admin-field-help">Enter the page path or full URL for this project.</span>
+                    <span asp-validation-for="Project.Link"></span>
+                </div>
+
+                <div class="admin-form-field admin-form-full">
+                    <label asp-for="Project.Status">Publishing Status</label>
+                    <select asp-for="Project.Status">
+                        <option value="Draft">Draft — keep off the public portfolio</option>
+                        <option value="Published">Published — show on the public portfolio</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="admin-form-actions">
+                <a class="form-cancel-button" href="/Admin/Projects">Cancel</a>
+                <button class="form-save-button" type="submit">Save Changes</button>
+            </div>
+        </form>
+    </section>
+</main>
+</div>

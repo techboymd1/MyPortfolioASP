@@ -1,0 +1,69 @@
+@page
+@model MyPortfolioASP.Areas.Admin.Pages.IndexModel
+<link rel="stylesheet" href="~/admin.css" asp-append-version="true" />
+
+<div class="admin-dashboard">
+    <aside class="admin-sidebar">
+        <h2>MD Admin</h2>
+        <p class="sidebar-label">WORKSPACE</p>
+
+    <a class="sidebar-link active" href="/Admin">Dashboard</a>
+    <a class="sidebar-link" href="/Admin/Projects">Manage Projects</a>
+    <a class="sidebar-link" href="/Admin/Projects/Create">Add New Project</a>
+
+    <p class="sidebar-label">WEBSITE</p>
+    <a class="sidebar-link" href="/" target="_blank">View Portfolio</a>
+    <a class="sidebar-link" href="/StudentStudyPlanner" target="_blank">View Case Study</a>
+</aside>
+
+<main class="admin-main">
+    <header class="admin-topbar">
+        <div>
+            <p class="admin-eyebrow">CONTENT MANAGEMENT SYSTEM</p>
+            <h1>Dashboard</h1>
+            <p>Manage your portfolio and projects from one place.</p>
+        </div>
+        <a class="admin-primary" href="/Admin/Projects/Create">+ Add Project</a>
+    </header>
+
+    <section class="admin-welcome">
+        <div>
+            <p class="admin-eyebrow">WELCOME BACK</p>
+            <h2>Your portfolio workspace</h2>
+            <p>Create projects, update existing work, and control what appears publicly.</p>
+            <a class="admin-light-button" href="/Admin/Projects">Manage Your Projects</a>
+        </div>
+        <div class="admin-welcome-icon">MD</div>
+    </section>
+
+    <h2 class="admin-section-title">Quick Actions</h2>
+
+    <section class="admin-action-grid">
+        <a class="admin-action-card" href="/Admin/Projects">
+            <span class="action-icon blue-icon">01</span>
+            <h3>Manage Projects</h3>
+            <p>View all projects and access their editing and deletion controls.</p>
+            <span class="action-link">Open projects →</span>
+        </a>
+
+        <a class="admin-action-card" href="/Admin/Projects/Create">
+            <span class="action-icon green-icon">02</span>
+            <h3>Create Project</h3>
+            <p>Add a new project and choose whether to publish it or save it as a draft.</p>
+            <span class="action-link">Create project →</span>
+        </a>
+
+        <a class="admin-action-card" href="/" target="_blank">
+            <span class="action-icon purple-icon">03</span>
+            <h3>View Website</h3>
+            <p>Open your public portfolio and check how your work appears to visitors.</p>
+            <span class="action-link">Visit website →</span>
+        </a>
+    </section>
+
+    <section class="admin-notice">
+        <h3>Publishing tip</h3>
+        <p>Use Published for projects you want visitors to see. Use Draft for projects that are not ready yet.</p>
+    </section>
+</main>
+</div>

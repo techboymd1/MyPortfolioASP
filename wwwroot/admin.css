@@ -1,0 +1,660 @@
+/* ========================================
+THEME AND BASIC STYLES
+======================================== */
+:root {
+    --navy: #14213d;
+    --blue: #315efb;
+    --blue-hover: #2448ce;
+    --background: #f3f6fc;
+    --white: #ffffff;
+    --text: #172033;
+    --muted: #718096;
+    --border: #e3e9f2;
+    --danger: #c62828;
+    --success: #15803d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+h1,
+h2,
+h3 {
+    color: var(--navy);
+}
+h1 {
+    margin-bottom: 12px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+}
+h2 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+p {
+    color: var(--muted);
+}
+a {
+    color: var(--blue);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--blue-hover);
+}
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+button {
+    cursor: pointer;
+}
+hr {
+    margin: 28px 0;
+    border: 0;
+    border-top: 1px solid var(--border);
+}
+/* ========================================
+   2. ADMIN LAYOUT AND SIDEBAR
+======================================== */
+.admin-dashboard {
+    display: grid;
+    grid-template-columns: 245px minmax(0, 1fr);
+    gap: 30px;
+    min-height: calc(100vh - 64px);
+}
+.admin-sidebar {
+    padding: 28px 18px;
+    border-radius: 16px;
+    background: var(--navy);
+    color: var(--white);
+}
+.admin-sidebar h2 {
+    margin: 0 10px 32px;
+    color: var(--white);
+    font-size: 25px;
+}
+.sidebar-label {
+    margin: 25px 10px 10px;
+    color: #9eacc6;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+.admin-sidebar a.sidebar-link {
+    display: block;
+    margin: 5px 0;
+    padding: 12px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #dce5f5;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+.admin-sidebar a.sidebar-link:hover,
+.admin-sidebar a.sidebar-link.active {
+    background: var(--blue);
+    color: var(--white);
+}
+.admin-main {
+    min-width: 0;
+    padding: 8px 0;
+}
+/* ========================================
+   3. PAGE HEADERS AND BUTTONS
+======================================== */
+.admin-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+.admin-topbar h1 {
+    margin: 0;
+    font-size: 32px;
+}
+.admin-topbar p {
+    margin: 5px 0 0;
+}
+.admin-eyebrow {
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+.admin-primary,
+.admin-light-button,
+.form-back-button,
+.form-cancel-button,
+.form-save-button,
+.project-edit-button,
+.project-delete-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    margin: 0;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.admin-primary,
+.form-save-button,
+.project-edit-button {
+    background: var(--blue);
+    color: var(--white);
+}
+.admin-primary:hover,
+.form-save-button:hover,
+.project-edit-button:hover {
+    background: var(--blue-hover);
+    color: var(--white);
+}
+.form-back-button,
+.form-cancel-button {
+    border-color: #d8e0ec;
+    background: var(--white);
+    color: #334155;
+}
+.form-back-button:hover,
+.form-cancel-button:hover {
+    background: #f4f7fc;
+    color: var(--navy);
+}
+.project-delete-button {
+    background: #fff0f0;
+    color: var(--danger);
+}
+.project-delete-button:hover {
+    background: #fee2e2;
+    color: var(--danger);
+}
+/* ========================================
+   4. DASHBOARD WELCOME SECTION
+======================================== */
+.admin-welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 32px;
+    border-radius: 16px;
+    background: linear-gradient(120deg, var(--navy), #284b9b);
+    color: var(--white);
+}
+.admin-welcome h2 {
+    margin: 8px 0;
+    color: var(--white);
+    font-size: 26px;
+}
+.admin-welcome p {
+    max-width: 520px;
+    color: #d9e4ff;
+}
+.admin-welcome .admin-eyebrow {
+    color: #a9c1ff;
+}
+.admin-light-button {
+    margin-top: 12px;
+    background: var(--white);
+    color: var(--navy);
+}
+.admin-light-button:hover {
+    background: #eaf0ff;
+    color: var(--navy);
+}
+.admin-welcome-icon {
+    display: grid;
+    width: 95px;
+    height: 95px;
+    flex-shrink: 0;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--white);
+    font-size: 30px;
+    font-weight: 700;
+}
+/* ========================================
+   5. DASHBOARD ACTION CARDS
+======================================== */
+.admin-section-title {
+    margin: 30px 0 18px;
+    font-size: 21px;
+}
+.admin-action-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+.admin-action-card {
+    display: flex;
+    min-height: 220px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    padding: 22px;
+    border: 1px solid #e2e8f2;
+    border-radius: 14px;
+    background: var(--white);
+    color: var(--text);
+    white-space: normal;
+    box-shadow: 0 5px 18px rgba(20, 33, 61, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.admin-action-card:hover {
+    transform: translateY(-3px);
+    background: var(--white);
+    color: var(--text);
+    box-shadow: 0 10px 25px rgba(20, 33, 61, 0.09);
+}
+.admin-action-card h3 {
+    margin: 17px 0 5px;
+    color: var(--navy);
+    font-size: 17px;
+}
+.admin-action-card p {
+    margin: 0 0 15px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 400;
+}
+.action-icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+}
+.blue-icon {
+    background: #e8efff;
+    color: var(--blue);
+}
+.green-icon {
+    background: #dcfce7;
+    color: var(--success);
+}
+.purple-icon {
+    background: #f0e8ff;
+    color: #7c3aed;
+}
+.action-link {
+    margin-top: auto;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
+}
+.admin-notice {
+    margin-top: 24px;
+    padding: 20px 24px;
+    border: 1px solid #dbe6ff;
+    border-radius: 12px;
+    background: #edf3ff;
+}
+.admin-notice h3 {
+    margin-bottom: 5px;
+    color: var(--navy);
+}
+.admin-notice p {
+    margin: 0;
+    font-size: 14px;
+}
+/* ========================================
+   6. PROJECT SUMMARY AND PROJECT CARDS
+======================================== */
+.project-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+.project-summary > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px;
+    border: 1px solid #e2e8f2;
+    border-radius: 13px;
+    background: var(--white);
+}
+.project-summary span {
+    color: var(--muted);
+    font-size: 13px;
+}
+.project-summary strong {
+    color: var(--navy);
+    font-size: 28px;
+}
+.projects-heading {
+    margin-bottom: 18px;
+}
+.projects-heading h2 {
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+.projects-heading p {
+    margin: 0;
+    font-size: 14px;
+}
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+.project-card {
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid #e2e8f2;
+    border-radius: 15px;
+    background: var(--white);
+    box-shadow: 0 5px 18px rgba(20, 33, 61, 0.04);
+}
+.project-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+.project-number {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.project-status {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+.status-published {
+    background: #dcfce7;
+    color: var(--success);
+}
+.status-draft {
+    background: #fff1d6;
+    color: #9a6700;
+}
+.project-card h3 {
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+.project-description {
+    min-height: 45px;
+    margin-bottom: 22px;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+.project-technologies {
+    padding: 14px;
+    border-radius: 9px;
+    background: #f4f7fc;
+}
+.project-technologies span {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.project-technologies p {
+    margin: 7px 0 0;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+.project-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #edf0f5;
+}
+.project-card-actions form {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+/* ========================================
+   7. CREATE AND EDIT PROJECT FORMS
+======================================== */
+.project-form-card {
+    max-width: 1000px;
+    padding: 30px;
+    border: 1px solid #e2e8f2;
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 5px 20px rgba(20, 33, 61, 0.04);
+}
+.project-form-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #edf0f5;
+}
+.form-heading-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 12px;
+    background: #e8efff;
+    color: var(--blue);
+    font-size: 27px;
+    font-weight: 500;
+}
+.project-form-heading h2 {
+    margin-bottom: 6px;
+    font-size: 21px;
+}
+.project-form-heading p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+}
+.admin-project-form {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+.admin-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+.admin-form-field {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 8px;
+}
+.admin-form-full {
+    grid-column: 1 / -1;
+}
+.admin-form-field label {
+    margin: 0;
+    color: #26344d;
+    font-size: 13px;
+    font-weight: 700;
+}
+.admin-form-field input,
+.admin-form-field textarea,
+.admin-form-field select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 13px 14px;
+    border: 1px solid #d8e0ec;
+    border-radius: 9px;
+    outline: none;
+    background: #fbfcff;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.admin-form-field input:focus,
+.admin-form-field textarea:focus,
+.admin-form-field select:focus {
+    border-color: var(--blue);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(49, 94, 251, 0.12);
+}
+.admin-form-field textarea {
+    min-height: 130px;
+    resize: vertical;
+    line-height: 1.6;
+}
+.admin-form-field input::placeholder,
+.admin-form-field textarea::placeholder {
+    color: #9aa6b8;
+}
+.admin-field-help {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 400;
+}
+.admin-form-field span[data-valmsg-for] {
+    color: var(--danger);
+    font-size: 12px;
+}
+.admin-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid #edf0f5;
+}
+/* ========================================
+   8. RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 1000px) {
+    .admin-dashboard {
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: 20px;
+    }
+.admin-action-grid {
+    grid-template-columns: 1fr;
+}
+}
+@media (max-width: 900px) {
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 650px) {
+    body {
+        padding: 12px;
+    }
+h1 {
+    font-size: 25px;
+}
+
+.admin-dashboard {
+    grid-template-columns: 1fr;
+}
+
+.admin-sidebar {
+    padding: 18px;
+}
+
+.admin-sidebar h2 {
+    margin-bottom: 15px;
+}
+
+.admin-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.admin-welcome {
+    padding: 22px;
+}
+
+.admin-welcome-icon {
+    display: none;
+}
+
+.project-summary {
+    grid-template-columns: 1fr;
+}
+
+.project-card {
+    padding: 18px;
+}
+
+.project-card-actions {
+    flex-wrap: wrap;
+}
+
+.project-form-card {
+    padding: 20px;
+}
+
+.admin-form-grid {
+    grid-template-columns: 1fr;
+}
+
+.admin-form-full {
+    grid-column: auto;
+}
+
+.admin-form-actions {
+    flex-wrap: wrap;
+}
+
+.form-back-button {
+    align-self: flex-start;
+}
+}

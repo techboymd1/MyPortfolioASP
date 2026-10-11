@@ -44,6 +44,6 @@ public async Task<IActionResult> OnPostAsync()
         return LocalRedirect(ReturnUrl);
     }
 
-    return RedirectToPage("/Index", new { area = "Admin" });
+    return Redirect("/Admin");
 }
 }

@@ -1,5 +1,6 @@
 CREATE TABLE student (
     student_id INT PRIMARY KEY,
-    name VARCHAR
+    name VARCHAR(50)
+    
 
 );

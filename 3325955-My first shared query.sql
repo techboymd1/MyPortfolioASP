@@ -1,1 +1,1 @@
-CREATE TABLE
+CREATE TABLE student :

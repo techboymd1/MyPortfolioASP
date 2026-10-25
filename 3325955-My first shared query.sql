@@ -1,1 +1,3 @@
-CREATE TABLE student :
+CREATE TABLE student (
+    
+);

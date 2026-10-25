@@ -1,3 +1,3 @@
 CREATE TABLE student (
-    student
+    student_id INT
 );
